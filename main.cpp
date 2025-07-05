@@ -13,6 +13,7 @@ int main(){
       BeginDrawing();
       ClearBackground(Color(GREEN));
       DrawFPS(int(0), int(0));
+      DrawCircle(int(WINDOW_WIDTH/2), int (WINDOW_HEIGHT/2), float(10), Color(BLUE));
       EndDrawing();
 
   }
