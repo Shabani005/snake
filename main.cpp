@@ -11,7 +11,7 @@ int randint(int min, int max) {
 
 
 int main(){
-    InitWindow(int(WINDOW_WIDTH), int(WINDOW_HEIGHT), "hello world");
+    InitWindow(int(WINDOW_WIDTH), int(WINDOW_HEIGHT), "snek game");
     SetTargetFPS(60);
     
     int score = 0;
