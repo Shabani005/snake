@@ -12,12 +12,16 @@ int randint(int min, int max) {
 
 int main(){
     InitWindow(int(WINDOW_WIDTH), int(WINDOW_HEIGHT), "snek game");
-    SetTargetFPS(60);
+    SetTargetFPS(20000);
     
     int score = 0;
-    int vel = 2; 
-    int currX = WINDOW_WIDTH/2;
-    int currY = WINDOW_HEIGHT/2;
+    
+    // divide velocity by GetFPS() to normalize speed
+
+    
+    float vel = 200.0f; 
+    float currX = WINDOW_WIDTH/2.0f;
+    float currY = WINDOW_HEIGHT/2.0f;
     int recW = 50;
     int recH = 20;
     
@@ -40,7 +44,7 @@ int main(){
       std::string scoreText = "score: " + std::to_string(score);
 
       ClearBackground(Color(GREEN)); 
-      DrawFPS(int(0), int(0));
+      DrawFPS(7, 5);
     
       DrawText(scoreText.c_str() , 375, 10, 20, BLACK);
 
@@ -77,8 +81,8 @@ int main(){
         dirX = 0;
       }
     
-      currX += dirX * vel;
-      currY += dirY * vel;
+      currX += dirX * vel * GetFrameTime();
+      currY += dirY * vel * GetFrameTime();
       
             
       if (CheckCollisionRecs(snek, food)){
