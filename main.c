@@ -1,6 +1,6 @@
 #include "raylib.h"
-#include <string>
-#include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
 
 int WINDOW_WIDTH = 500;
 int WINDOW_HEIGHT= 500;
@@ -9,9 +9,8 @@ int randint(int min, int max) {
     return min + rand() % (max - min + 1);
 }
 
-
 int main(){
-    InitWindow(int(WINDOW_WIDTH), int(WINDOW_HEIGHT), "snek game");
+    InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "snek game");
     SetTargetFPS(20000);
     
     int score = 0;
@@ -40,13 +39,14 @@ int main(){
       }
 
       BeginDrawing();
+      
+      char scoreText[64];
+      sprintf(scoreText, "Score: %d", score); 
 
-      std::string scoreText = "score: " + std::to_string(score);
-
-      ClearBackground(Color(GREEN)); 
+      ClearBackground(GREEN); 
       DrawFPS(7, 5);
     
-      DrawText(scoreText.c_str() , 375, 10, 20, BLACK);
+      DrawText(scoreText, 375, 10, 20, BLACK);
 
       Rectangle snek = { (float)currX, (float)currY, (float)recW, (float)recH };
       Rectangle food = { (float)foodX, (float)foodY, 10, 10 };
