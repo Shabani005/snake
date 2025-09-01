@@ -15,7 +15,7 @@ int randint(int min, int max) {
 
 int main() {
     InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Classic Snake");
-    SetTargetFPS(60);
+    //SetTargetFPS(60);
 
     int score = 0;
 
