@@ -3,5 +3,6 @@
 Build Instructions: 
 ```
 gcc -o builder builder.c 
-./builder
+./builder ## only build
+./builder run ## build and run
 ```

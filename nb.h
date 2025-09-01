@@ -254,7 +254,9 @@ void nb_rebuild(int argc, char **argv){
 
       printf("\n");
 
-      nb_append_da(&cmd, argv[0]);
+      for (int i=0; i<argc; ++i){
+        nb_append_da(&cmd, argv[i]);
+      }
       nb_cmd(&cmd);
             exit(1);
 

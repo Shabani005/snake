@@ -13,5 +13,10 @@ int main(int argc, char **argv){
   nb_append(&cmd, "-lraylib");
 
   nb_cmd(&cmd);
+  
+  if (strcmp(argv[1], "run") == 0){
+    nb_append(&cmd, "./snakec");
+    nb_cmd(&cmd);
+  }
   return 0;
 }
